@@ -32,11 +32,15 @@ public class MyStepdefs  {
     @Quando("preencho os campos obrigatorios do formulario de cotacao")
     public void preenchoOsCamposObrigatoriosDoFormularioDeCotacao() throws Exception {
         testFunc.preencherDadosObrigatorios();
-
     }
 
     @E("envio o formulario")
     public void envioOFormulario() {
         testFunc.enviarFormularios();
+    }
+
+    @Quando("preencho os campos do {string} obrigatorios do formulario de cotacao")
+    public void preenchoOsCamposDoObrigatoriosDoFormularioDeCotacao(String campos) throws Exception {
+        testFunc.validarCampos(campos);
     }
 }

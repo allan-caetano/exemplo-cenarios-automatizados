@@ -11,7 +11,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.TestPage;
+
 import java.io.File;
+
 import static core.DriverFactory.getDriver;
 
 public class TestFunc extends Propiedades {
@@ -30,6 +32,7 @@ public class TestFunc extends Propiedades {
             e.printStackTrace();
         }
     }
+
     public void preencherDadosObrigatorios() throws Exception {
         preencherFormularioAba("Enter Vehicle Data");
         clicarBotao("Next");
@@ -112,7 +115,7 @@ public class TestFunc extends Propiedades {
             ActionsUtils.clicarComJS(element);
             addEvidencie();
             ActionsUtils.clickJavaScript(testPage.getBotaoNext(), DriverFactory.getDriver());
-        }else if(aba.equalsIgnoreCase("Send Quote")){
+        } else if (aba.equalsIgnoreCase("Send Quote")) {
             testPage.getEmail().sendKeys("test-auto@email.com");
             testPage.getUserName().sendKeys("Albert");
             testPage.getPassaword().sendKeys("Omega10@");
@@ -120,18 +123,20 @@ public class TestFunc extends Propiedades {
         }
     }
 
-    public void enviarFormularios(){
+    public void enviarFormularios() {
         clicarBotao("Send");
     }
+
     public void clicarBotao(String botao) {
         if (botao.compareTo("Next") == 0) {
             ActionsUtils.clickJavaScript(testPage.getBotaoNext(), DriverFactory.getDriver());
-        }else if(botao.equals("Send")){
+        } else if (botao.equals("Send")) {
             ActionsUtils.clicarComJS(testPage.getEnviarEmail());
         }
     }
+
     public void validarMensagem(String mensagem) throws Exception {
-        switch (mensagem){
+        switch (mensagem) {
             case "Sending e-mail success!":
                 wait.until(ExpectedConditions.visibilityOf(testPage.getMenssagemSucesso()));
                 String mensage = testPage.getMenssagemSucesso().getText();
@@ -140,6 +145,22 @@ public class TestFunc extends Propiedades {
                 break;
             default:
                 throw new IllegalArgumentException("Mensagem não encontrada");
+        }
+    }
+
+    public void validarCampos(String campos) throws Exception {
+        if(campos.equals("Enter Vehicle Data")){
+            preencherFormularioAba("Enter Vehicle Data");
+            clicarBotao("Next");
+        }else if(campos.equals("Enter Insurant Data")){
+            preencherFormularioAba("Enter Insurant Data");
+            clicarBotao("Next");
+        }else if(campos.equals("Enter Product Data")){
+            tempo(1);
+            preencherFormularioAba("Enter Product Data");
+            clicarBotao("Next");
+        }else if(campos.equals("Send Quote")){
+            preencherFormularioAba("Send Quote");
         }
     }
 }

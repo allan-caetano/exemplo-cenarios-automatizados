@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         glue = "step",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         dryRun = false,
-        tags = "@testWeb"
+        tags = "@test-web-E-C"
 )
 public class Runner {
 
