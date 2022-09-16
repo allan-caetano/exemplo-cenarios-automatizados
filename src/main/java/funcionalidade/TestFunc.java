@@ -20,9 +20,12 @@ public class TestFunc extends Propiedades {
     WebDriverWait wait = new WebDriverWait(getDriver(), 20);
     TestPage testPage = new TestPage(getDriver());
 
+  //  EvidenceFactory evidenceFactory =  new EvidenceFactory();
+
     public void acessarWeb() throws Throwable {
         initialCreate();
         addEvidencie();
+
     }
 
     public void tempo(long tempo) {

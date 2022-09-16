@@ -2,7 +2,7 @@
 # Tags: optional
 # language: pt
 
- #Executar Teste pela Class Runner passando a Tag desejada
+ #EXECUTAR o Teste pela Class Runner passando a Tag desejada
 
 Funcionalidade: Executar testes automatizados em uma aplicação de simulação de cotação de veículos
 
@@ -20,7 +20,6 @@ Funcionalidade: Executar testes automatizados em uma aplicação de simulação 
     E preecncho os campos do formulario da aba "Send Quote"
     Quando clico no botao "Send"
     Entao Visualizo a mensage de sucesso "Sending e-mail success!"
-
 
   @test-web
   Cenario: Validar realização de preenchimento de cadastro no sistema

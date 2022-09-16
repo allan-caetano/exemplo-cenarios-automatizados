@@ -23,9 +23,6 @@ import static core.DriverFactory.getDriver;
 import static core.utils.DateUtils.*;
 
 public class BaseTest {
-        protected static long initialTime;
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        Date date = new Date();
 
 //    public void gravarVideo() throws ATUTestRecorderException {
 //        recorder = new ATUTestRecorder("C:\\Users\\Allan.Caetano\\Desktop\\FrameWork\\target\\video" ,true);
@@ -51,7 +48,4 @@ public class BaseTest {
             DriverFactory.killDriver();
         }
     }
-
-
-
 }
